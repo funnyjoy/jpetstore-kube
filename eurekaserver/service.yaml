@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: eurekaserver
+  type: LoadBalancer
   ports:
    -  protocol: TCP
       port: 8761
