@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jpetstoredb_msa
+  labels:
+    app: jpetstoredb_msa
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jpetstoredb_msa
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: jpetstoredb_msa
+    spec:
+      containers:
+      - image: jaypark00/jpetstoredb:msa_v1
+        imagePullPolicy: Always
+        name: jpetstoredb_msa
+        ports:
+        - containerPort: 3306
+          protocol: TCP
