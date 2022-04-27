@@ -5,9 +5,12 @@ metadata:
 spec:
   selector:
     app: scouterserver
-  type: LoadBalancer
   ports:
     - name: scouterserver-port1
+      protocol: UDP
+      port: 6100
+      targetPort: 6100
+    - name: scouterserver-port2
       protocol: TCP
       port: 6100
       targetPort: 6100
