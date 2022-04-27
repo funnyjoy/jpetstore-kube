@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: scouterserver
+  name: scouterserver2
 spec:
   selector:
     app: scouterserver
-  type: LoadBalancer
   ports:
-    - name: scouterserver-port1
-      protocol: TCP
+    - name: scouterserver-port2
+      protocol: UDP
       port: 6100
       targetPort: 6100

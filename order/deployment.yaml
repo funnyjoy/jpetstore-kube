@@ -32,7 +32,7 @@ spec:
         - name: ORDER_PORT
           value: "16061"
         - name: DATASOURCE_URL
-          value: jdbc:mariadb://orderdb_msa:3306/orderdb
+          value: jdbc:mariadb://orderdb-msa:3306/orderdb
         - name: DB_USERNAME
           value: order
         - name: DB_PASSWORD
