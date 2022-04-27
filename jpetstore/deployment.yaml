@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jpetstore
+  labels:
+    app: jpetstore
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jpetstore
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: jpetstore
+    spec:
+      containers:
+      - image: jaypark00/jpetstore:msa_v2
+        imagePullPolicy: Always
+        name: jpetstore
+        env:
+        - name: PROFILE
+          value: prod
+        - name: SPRING_CLOUD_CONFIG_URI
+          value: http://configserver:8888
+        - name: REDIS_HOST
+          value: redis
+        - name: REDIS_PORT
+          value: 6379
+        - name: JPETSTORE_PORT
+          value: 15051
+        - name: DATASOURCE_URL
+          value: jdbc:mariadb://jpetstoredb_msa:3306/jpetstoredb
+        - name: DB_USERNAME
+          value: jpetstore
+        - name: DB_PASSWORD
+          value: qwer1234
+        - name: RABBITMQ_HOST
+          value: rabbitmq
+        - name: RABBITMQ_PORT
+          value: 5672
+        - name: RABBITMQ_USERNAME
+          value: jpetstore
+        - name: RABBITMQ_PASSWORD
+          value: qwer1234
+        - name: EUREKA_DEFAULTZONE
+          value: http://eurekaserver:8761/eureka/,http://eurekaserver2:8762/eureka/
+        - name: ZIPKIN_URI
+          value: http://zipkin:9411/
+        - name: ELASTICSEARCH_HOSTS
+          value: elasticsearch:9200
+        - name: KIBANA_HOST
+          value: kibana:5601
+        ports:
+        - containerPort: 15051
+          protocol: TCP

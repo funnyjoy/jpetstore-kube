@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configserver
+  labels:
+    app: configserver
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: configserver
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: configserver
+    spec:
+      containers:
+      - image: jaypark00/configserver:msa_v1
+        imagePullPolicy: Always
+        name: configserver
+        env:
+        - name: DEFAULT_BRANCH
+          value: master
+        ports:
+        - containerPort: 8888
+          protocol: TCP
