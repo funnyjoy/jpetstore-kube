@@ -30,7 +30,7 @@ spec:
         - name: SPRING_CLOUD_CONFIG_URI
           value: http://configserver:8888
         - name: ZUUL_PORT
-          value: "8080"
+          value: "9090"
         - name: EUREKA_DEFAULTZONE
           value: http://eurekaserver:8761/eureka/,http://eurekaserver2:8762/eureka/
         - name: ZIPKIN_URI
@@ -40,5 +40,5 @@ spec:
         - name: KIBANA_HOST
           value: kibana:5601
         ports:
-        - containerPort: 8080
+        - containerPort: 9090
           protocol: TCP
