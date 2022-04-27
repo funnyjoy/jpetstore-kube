@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productdb-msa
+  labels:
+    app: productdb-msa
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productdb-msa
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: productdb-msa
+    spec:
+      containers:
+      - image: jaypark00/productdb:msa_v1
+        imagePullPolicy: Always
+        name: productdb-msa
+        ports:
+        - containerPort: 3306
+          protocol: TCP
