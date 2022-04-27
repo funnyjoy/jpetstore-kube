@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scouterserver
+  labels:
+    app: scouterserver
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scouterserver
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: scouterserver
+    spec:
+      containers:
+      - image: jaypark00/scouterserver:msa_v2
+        imagePullPolicy: Always
+        name: scouterserver
+        ports:
+        - containerPort: 6100
+          protocol: TCP
