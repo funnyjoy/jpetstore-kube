@@ -32,9 +32,9 @@ spec:
         - name: REDIS_HOST
           value: redis
         - name: REDIS_PORT
-          value: 6379
+          value: "6379"
         - name: JPETSTORE_PORT
-          value: 15051
+          value: "15051"
         - name: DATASOURCE_URL
           value: jdbc:mariadb://jpetstoredb_msa:3306/jpetstoredb
         - name: DB_USERNAME
@@ -44,7 +44,7 @@ spec:
         - name: RABBITMQ_HOST
           value: rabbitmq
         - name: RABBITMQ_PORT
-          value: 5672
+          value: "5672"
         - name: RABBITMQ_USERNAME
           value: jpetstore
         - name: RABBITMQ_PASSWORD

@@ -30,7 +30,7 @@ spec:
         - name: SPRING_CLOUD_CONFIG_URI
           value: http://configserver:8888
         - name: ORDER_PORT
-          value: 16061
+          value: "16061"
         - name: DATASOURCE_URL
           value: jdbc:mariadb://orderdb_msa:3306/orderdb
         - name: DB_USERNAME
@@ -40,7 +40,7 @@ spec:
         - name: RABBITMQ_HOST
           value: rabbitmq
         - name: RABBITMQ_PORT
-          value: 5672
+          value: "5672"
         - name: RABBITMQ_USERNAME
           value: jpetstore
         - name: RABBITMQ_PASSWORD

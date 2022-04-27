@@ -30,7 +30,7 @@ spec:
         - name: SPRING_CLOUD_CONFIG_URI
           value: http://configserver:8888
         - name: EUREKA_PORT
-          value: 8762
+          value: "8762"
         - name: OTHER_EUREKA_URI
           value: eurekaserver:8761
         ports:
