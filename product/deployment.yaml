@@ -32,7 +32,7 @@ spec:
         - name: PRODUCT_PORT
           value: "17071"
         - name: DATASOURCE_URL
-          value: jdbc:mariadb://productdb_msa:3306/productdb
+          value: jdbc:mariadb://productdb-msa:3306/productdb
         - name: DB_USERNAME
           value: product
         - name: DB_PASSWORD
