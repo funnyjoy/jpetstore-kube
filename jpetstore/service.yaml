@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: jpetstore
+  type: LoadBalancer
   ports:
    -  protocol: TCP
       port: 15051
