@@ -27,3 +27,6 @@ spec:
         ports:
         - containerPort: 6100
           protocol: TCP
+        - containerPort: 6100
+          protocol: UDP
+          
