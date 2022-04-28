@@ -21,7 +21,7 @@ spec:
         app: zuulserver
     spec:
       containers:
-      - image: jaypark00/zuulserver:msa_v2
+      - image: jaypark00/zuulserver:msa_v3
         imagePullPolicy: Always
         resources:
           requests:
@@ -38,8 +38,8 @@ spec:
           value: http://configserver:8888
         - name: ZUUL_PORT
           value: "9090"
-        - name: EUREKA_DEFAULTZONE
-          value: http://eurekaserver:8761/eureka/,http://eurekaserver2:8762/eureka/
+#        - name: EUREKA_DEFAULTZONE
+#          value: http://eurekaserver:8761/eureka/,http://eurekaserver2:8762/eureka/
         - name: ZIPKIN_URI
           value: http://zipkin:9411/
         - name: ELASTICSEARCH_HOSTS

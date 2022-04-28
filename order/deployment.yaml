@@ -21,7 +21,7 @@ spec:
         app: order
     spec:
       containers:
-      - image: jaypark00/order:msa_v2
+      - image: jaypark00/order:msa_v3
         imagePullPolicy: Always
         resources:
           requests:
@@ -52,8 +52,8 @@ spec:
           value: jpetstore
         - name: RABBITMQ_PASSWORD
           value: qwer1234
-        - name: EUREKA_DEFAULTZONE
-          value: http://eurekaserver:8761/eureka/,http://eurekaserver2:8762/eureka/
+#        - name: EUREKA_DEFAULTZONE
+#          value: http://eurekaserver:8761/eureka/,http://eurekaserver2:8762/eureka/
         - name: ZIPKIN_URI
           value: http://zipkin:9411/
         - name: ELASTICSEARCH_HOSTS
