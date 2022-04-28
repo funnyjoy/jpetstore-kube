@@ -23,6 +23,13 @@ spec:
       containers:
       - image: jaypark00/product:msa_v2
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
         name: product
         env:
         - name: PROFILE
