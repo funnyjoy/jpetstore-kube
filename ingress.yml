@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    #nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+   - http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          serviceName: jpetstore
+          servicePort: 15051
+      - pathType: Prefix
+        path: /order
+        backend:
+          serviceName: jpetstore
+          servicePort: 15051
+      - pathType: Prefix
+        path: /categories
+        backend:
+          serviceName: product
+          servicePort: 17071
+      - pathType: Prefix
+        path: /products
+        backend:
+          serviceName: product
+          servicePort: 17071
+      - pathType: Prefix
+        path: /items
+        backend:
+          serviceName: product
+          servicePort: 17071
+      - pathType: Prefix
+        path: /orders
+        backend:
+          serviceName: order
+          servicePort: 16061
