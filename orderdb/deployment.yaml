@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: orderdb-msa
+  name: orderdb
   labels:
-    app: orderdb-msa
+    app: orderdb
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: orderdb-msa
+      app: orderdb
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: orderdb-msa
+        app: orderdb
     spec:
       containers:
-      - image: jaypark00/orderdb:msa_v1
+      - image: jaypark00/orderdb:1.0
         imagePullPolicy: Always
-        name: orderdb-msa
+        name: orderdb
         ports:
         - containerPort: 3306
           protocol: TCP

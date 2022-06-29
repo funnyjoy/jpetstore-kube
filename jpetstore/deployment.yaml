@@ -21,7 +21,7 @@ spec:
         app: jpetstore
     spec:
       containers:
-      - image: jaypark00/jpetstore:msa_v2
+      - image: jaypark00/jpetstore:0.7-log-collect
         imagePullPolicy: Always
         resources:
           requests:
@@ -43,7 +43,7 @@ spec:
         - name: JPETSTORE_PORT
           value: "15051"
         - name: DATASOURCE_URL
-          value: jdbc:mariadb://jpetstoredb-msa:3306/jpetstoredb
+          value: jdbc:mariadb://jpetstoredb:3306/jpetstoredb
         - name: DB_USERNAME
           value: jpetstore
         - name: DB_PASSWORD

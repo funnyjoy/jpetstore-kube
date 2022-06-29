@@ -21,7 +21,7 @@ spec:
         app: product
     spec:
       containers:
-      - image: jaypark00/product:msa_v2
+      - image: jaypark00/product:0.7-log-collect
         imagePullPolicy: Always
         resources:
           requests:
@@ -39,7 +39,7 @@ spec:
         - name: PRODUCT_PORT
           value: "17071"
         - name: DATASOURCE_URL
-          value: jdbc:mariadb://productdb-msa:3306/productdb
+          value: jdbc:mariadb://productdb:3306/productdb
         - name: DB_USERNAME
           value: product
         - name: DB_PASSWORD

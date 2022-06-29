@@ -21,7 +21,7 @@ spec:
         app: eurekaserver2
     spec:
       containers:
-      - image: jaypark00/eurekaserver:msa_v1
+      - image: jaypark00/eurekaserver:1.0
         imagePullPolicy: Always
         name: eurekaserver2
         env:

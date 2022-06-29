@@ -21,7 +21,7 @@ spec:
         app: configserver
     spec:
       containers:
-      - image: jaypark00/configserver:msa_v1
+      - image: jaypark00/configserver:1.0
         imagePullPolicy: Always
         name: configserver
         env:
