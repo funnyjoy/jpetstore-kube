@@ -25,6 +25,8 @@ spec:
         imagePullPolicy: Always
         name: configserver
         env:
+        - name: PROFILE
+          value: prod
         - name: GIT_URI
           value: https://github.com/jaypark00/jpetstore-config-repo.git
         - name: DEFAULT_BRANCH
