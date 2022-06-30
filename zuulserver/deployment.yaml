@@ -21,7 +21,7 @@ spec:
         app: zuulserver
     spec:
       containers:
-      - image: jaypark00/zuulserver:0.7-log-collect
+      - image: jaypark00/zuulserver:0.8-scouter
         imagePullPolicy: Always
         resources:
           requests:

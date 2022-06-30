@@ -21,7 +21,7 @@ spec:
         app: order
     spec:
       containers:
-      - image: jaypark00/order:0.7-log-collect
+      - image: jaypark00/order:0.8-scouter
         imagePullPolicy: Always
         resources:
           requests:
